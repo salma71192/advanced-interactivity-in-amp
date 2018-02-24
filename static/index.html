@@ -141,6 +141,13 @@ limitations under the License.
 </head>
 
 <body>
+  <amp-state id="selected">
+    <script type="application/json">
+      {
+        "slide": 0
+      }
+    </script>
+  </amp-state>
   <header id="header" class="mdl-color--black mdl-color-text--white">
     <amp-img class="menu" src="./img/ic_menu_white_24dp_1x.png" width=24 height=24></amp-img>
     <span class="mdl-color-text--blue">AMP</span>PAREL
@@ -151,7 +158,8 @@ limitations under the License.
     <h5 class="title">MEN'S COTTON CREW NECK<br>LONG SLEEVE T-SHIRT</h5>
     <h6 class="rating"><span class="mdl-color-text--red">★★★★☆</span> <span class="mdl-color-text--grey">(14)</span></h6>
 
-    <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel">
+    <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
+    on="slideChange:AMP.setState({selected: {slide: event.index}})">
       <!-- TODO: "Changing images in amp-carousel" -->
       <amp-img width=200 height=250 src="./shirts/black.jpg"></amp-img>
       <amp-img width=300 height=375 src="./shirts/black.jpg"></amp-img>
